@@ -68,7 +68,8 @@ FILES=(
   ".github/workflows/gem-push.yml"
   "msfconsole"
   "msfupdate"
-  "metasploit-framework")
+  "metasploit-framework"
+  "setup_ruby")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
