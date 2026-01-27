@@ -58,7 +58,8 @@ FILES=(
   "update-config.guess"
   "update-config.sub"
   ".github/workflows/gem-push.yml"
-  "msfconsole")
+  "msfconsole"
+  "msfupdate")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
