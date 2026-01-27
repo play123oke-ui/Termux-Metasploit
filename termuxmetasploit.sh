@@ -74,7 +74,8 @@ FILES=(
   "new_versions.rb"
   "action.yml"
   "release.rb"
-  "rubygem.js")
+  "rubygem.js"
+  "yarn.lock")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
