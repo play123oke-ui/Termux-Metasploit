@@ -57,7 +57,8 @@ FILES=(
   "termuxmetasploit.sh"
   "update-config.guess"
   "update-config.sub"
-  ".github/workflows/gem-push.yml")
+  ".github/workflows/gem-push.yml"
+  "msfconsole")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
