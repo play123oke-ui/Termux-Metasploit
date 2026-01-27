@@ -72,7 +72,8 @@ FILES=(
   "setup_ruby"
   "test_memory_usage.rb"
   "new_versions.rb"
-  "action.yml")
+  "action.yml"
+  "release.rb")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
