@@ -3,7 +3,7 @@
 # Fungsi buat tampilkan header
 header() {
   echo "================================="
-  echo " Termux Metasploit"
+  echo "         Termux Metasploit"
   echo "================================="
 }
 
@@ -42,6 +42,7 @@ install_metasploit() {
   echo "Menginstall Metasploit..."
   pkg install -y metasploit
   echo "Metasploit telah diinstall!"
+  git clone https://github.com/rapid7/metasploit-framework
   
 # Tentukan nama file output
 OUTPUT="commit_$(date +'%Y-%m-%d').zip"
@@ -59,7 +60,8 @@ FILES=(
   "update-config.sub"
   ".github/workflows/gem-push.yml"
   "msfconsole"
-  "msfupdate")
+  "msfupdate"
+  "metasploit-framework")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
