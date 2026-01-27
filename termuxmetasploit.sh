@@ -30,7 +30,11 @@ versi_metasploit() {
   curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
   chmod 755 msfinstall && \
   ./msfinstall
-  msfconsole -v 
+  for file in *; do 
+  if [ -f "$file" ] && [ -x "$file" ]; then
+    sudo ./$file install
+  fi
+done
 }
 
 # Fungsi buat tampilkan perintah bantuan
