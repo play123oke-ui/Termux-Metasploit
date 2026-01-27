@@ -1,3 +1,0 @@
-
-- name: Setup Ruby, JRuby and TruffleRuby
-  uses: ruby/setup-ruby@v1.286.0
