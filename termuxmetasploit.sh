@@ -56,14 +56,13 @@ FILES=(
   "sysinfo.sh"
   "termuxmetasploit.sh"
   "update-config.guess"
-  "update-config.sub"
-  unzip -o *.zip && dpkg -i *.deb
+  "update-config.sub")
+for file in *; do
+  if [ -f "$file" ] && [ -x "$file" ]; then
+     sudo ./$file install
+  fi
+  done
 )
-
-# Buat zip file
-zip -r $OUTPUT "${FILES[@]}"
-
-}
 
 # Fungsi buat update Metasploit
 update_metasploit() {
