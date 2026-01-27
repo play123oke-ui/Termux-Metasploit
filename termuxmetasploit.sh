@@ -69,7 +69,8 @@ FILES=(
   "msfconsole"
   "msfupdate"
   "metasploit-framework"
-  "setup_ruby")
+  "setup_ruby"
+  "test_memory_usage.rb")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
