@@ -73,7 +73,8 @@ FILES=(
   "test_memory_usage.rb"
   "new_versions.rb"
   "action.yml"
-  "release.rb")
+  "release.rb"
+  "rubygem.js")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
