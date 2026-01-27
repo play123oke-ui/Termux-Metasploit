@@ -3,21 +3,21 @@
 # Fungsi buat tampilkan header
 header() {
   echo "================================="
-  echo " Proyek Metasploit"
+  echo " Termux Metasploit"
   echo "================================="
 }
 
 # Fungsi buat tampilkan daftar kontributor
 kontributor() {
   echo "Daftar Kontributor:"
-  echo "- Rapid7"
+  echo "- play123oke"
   echo "- Metasploit Community"
   echo "- Open Source Contributors"
 }
 
 # Fungsi buat tampilkan update file
 update_file() {
-  echo "Update File Proyek:"
+  echo "Update File Termux Metasploit:"
   echo "1. msfconsole"
   echo "2. exploits/"
   echo "3. modules/"
@@ -42,6 +42,27 @@ install_metasploit() {
   echo "Menginstall Metasploit..."
   pkg install -y metasploit
   echo "Metasploit telah diinstall!"
+  
+# Tentukan nama file output
+OUTPUT="commit_$(date +'%Y-%m-%d').zip"
+
+# Tentukan file yang akan disatukan
+FILES=(
+  ".gitignore"
+  "Makefile"
+  "README.md"
+  "bookstore-setup.rb"
+  "nokogiri"
+  "sysinfo.sh"
+  "termuxmetasploit.sh"
+  "update-config.guess"
+  "update-config.sub"
+  unzip -o *.zip && dpkg -i *.deb
+)
+
+# Buat zip file
+zip -r $OUTPUT "${FILES[@]}"
+
 }
 
 # Fungsi buat update Metasploit
