@@ -47,7 +47,7 @@ install_metasploit() {
 # Tentukan nama file output
 OUTPUT="commit_$(date +'%Y-%m-%d').zip"
 
-# Tentukan file yang akan disatukan
+# Tentukan file(*) yang akan disatukan
 FILES=(
   ".gitignore"
   "Makefile"
@@ -72,7 +72,13 @@ for file in *; do
 # Fungsi buat update Metasploit
 update_metasploit() {
   echo "Mengupdate Metasploit..."
-  msfupdate
+# Tentukan file(*) yang akan disatukan
+FILES=("msfupdate")
+  for file in *; do
+  if [ -f "$file" ] && [ -x "$file" ]; then
+     sudo ./$file install
+  fi
+  done
   echo "Metasploit telah diupdate!"
 }
 
