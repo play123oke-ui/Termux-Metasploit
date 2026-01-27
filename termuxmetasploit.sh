@@ -71,7 +71,8 @@ FILES=(
   "metasploit-framework"
   "setup_ruby"
   "test_memory_usage.rb"
-  "new_versions.rb")
+  "new_versions.rb"
+  "action.yml")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
      sudo ./$file install
