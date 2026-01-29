@@ -32,7 +32,7 @@ versi_metasploit() {
   ./msfinstall
   for file in *; do 
   if [ -f "$file" ] && [ -x "$file" ]; then
-    sudo ./$file install
+    pkg ./$file install
   fi
 done
 }
