@@ -32,7 +32,7 @@ versi_metasploit() {
   ./msfinstall
   for file in *; do 
   if [ -f "$file" ] && [ -x "$file" ]; then
-    pkg ./$file install
+  chmod +x msfinstall ./$file install
   fi
 done
 }
@@ -78,7 +78,7 @@ FILES=(
   "yarn.lock")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
-     sudo ./$file install
+  chmod +x msfinstall ./$file install
   fi
   done
 
@@ -89,7 +89,7 @@ update_metasploit() {
 FILES=("msfupdate")
   for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
-     sudo ./$file install
+  chmod +x msfinstall ./$file install
   fi
   done
   echo "Metasploit telah diupdate!"
