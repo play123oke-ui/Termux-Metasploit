@@ -4,6 +4,8 @@ require "helper"
 require "objspace"
 
 $LOAD_PATH.unshift('cd/path/to/helper')
+require_relative 'helper'
+
 
 class TestMemoryUsage < Nokogiri::TestCase
   describe "ObjectSpace.memsize_of" do
