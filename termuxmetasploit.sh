@@ -50,7 +50,7 @@ install_metasploit() {
   pkg install -y metasploit
   echo "Metasploit telah diinstall!"
   git clone https://github.com/rapid7/metasploit-framework
-  
+}  
 # Tentukan nama file output
 OUTPUT="commit_$(date +'%Y-%m-%d').zip"
 
@@ -208,5 +208,4 @@ while true; do
   esac
   echo "kembali ke menu"
 done
-# Tutup fungsi
 }
