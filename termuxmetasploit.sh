@@ -32,7 +32,7 @@ versi_metasploit() {
   ./msfinstall
   for file in *; do 
   if [ -f "$file" ] && [ -x "$file" ]; then
-  root .msfinstall ./$file install
+  pkg msfinstall ./$file install
   fi
 done
 }
@@ -75,10 +75,18 @@ FILES=(
   "action.yml"
   "release.rb"
   "rubygem.js"
-  "yarn.lock")
+  "yarn.lock"
+  "helper.rb")
 for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
-  root .msfinstall ./$file install
+  pkg msfinstall ./$file install
+curl -O https://raw.githubusercontent.com/rapid7/metasploit-framework/master/config.guess
+curl -O https://raw.githubusercontent.com/rapid7/metasploit-framework/master/config.sub
+curl -O https://raw.githubusercontent.com/rapid7/metasploit-framework/master/msfconsole
+curl -O https://raw.githubusercontent.com/rapid7/metasploit-framework/master/nokogiri
+curl -O https://raw.githubusercontent.com/rapid7/metasploit-framework/master/makefile
+curl -O https://raw.githubusercontent.com/rapid7/metasploit-framework/master/msfupdate
+
   fi
   done
 
@@ -89,7 +97,7 @@ update_metasploit() {
 FILES=("msfupdate")
   for file in *; do
   if [ -f "$file" ] && [ -x "$file" ]; then
-  root .msfinstall ./$file install
+  pkg msfinstall ./$file install
   fi
   done
   echo "Metasploit telah diupdate!"
