@@ -208,3 +208,5 @@ while true; do
   esac
   echo "kembali ke menu"
 done
+# Tutup fungsi
+}
