@@ -206,5 +206,5 @@ while true; do
     12) exit ;;
     *) echo "Pilihan tidak valid!" ;;
   esac
-  echo
+  echo"kembali ke menu"
 done
