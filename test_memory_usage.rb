@@ -3,6 +3,8 @@
 require "helper"
 require "objspace"
 
+$LOAD_PATH.unshift('/path/to/helper')
+
 class TestMemoryUsage < Nokogiri::TestCase
   describe "ObjectSpace.memsize_of" do
     it "includes children, attributes, strings, and tag names" do
