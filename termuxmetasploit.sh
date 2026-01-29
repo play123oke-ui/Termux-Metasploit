@@ -81,7 +81,6 @@ for file in *; do
      sudo ./$file install
   fi
   done
-)
 
 # Fungsi buat update Metasploit
 update_metasploit() {
